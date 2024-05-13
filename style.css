@@ -1,0 +1,10 @@
+/* Variables */
+/* Mixin */
+nav {
+  background-color: #402063;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #F5F5F5;
+  margin: 16px 53px 16px 53px;
+}/*# sourceMappingURL=style.css.map */
