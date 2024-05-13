@@ -5,39 +5,41 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Movistar</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
 	<nav> <!--Display: Flex - Justify: Space-between - Align: Center-->
-		<div class="logo">
-			<img src="./SVGs/Logo Movistar.svg">
-		</div>
-		<div class="menu"> <!--Display,Justify,Align - Gap-->
-			<p>Planes y servicios</p>
-			<p>Internet</p>
-			<p>Club Movistar</p>
-			<p>Atención al Cliente</p>
-		</div>
-		<div class="menu-responsive"> <!--Mobile - Tablet Responsive-->
-			<img src="./SVGs/Menu.svg">
+		<div class="logo-menu">
+			<img class="logo" src="./SVGs/Logo Movistar.svg">
+			<div class="menu-responsive"> <!--Mobile - Tablet Responsive-->
+				<img src="./SVGs/Menu.svg">
+			</div>
+			<div class="menu">
+				<p>Planes y servicios</p>
+				<p>Internet</p>
+				<p>Club Movistar</p>
+				<p>Atención al Cliente</p>
+			</div>
 		</div>
 		<div class="buttons-nav"> <!--Display,Justify,Align - Gap-->
-			<button><img src="./SVGs/Carrito.svg"></button>
-			<button>eSIM</button>
-			<button>Mi Movistar</button>
+			<button class="shop"><img src="./SVGs/Carrito.svg"></button>
+			<button class="esim">eSIM</button>
+			<button class="movistar">Mi Movistar</button>
 		</div>
 	</nav>
 	<section class="hero"> <!--Display, Direction: Column, Justify, Align-->
 		<div class="text-hero">
-			<h1>Vive conectado, vive mejor.</h1>
-			<p>Conéctate al futuro con nuestra red 4G y disfruta 
-				de una experiencia de internet sin límites.</p>
+			<h1>Vive conectado, <b>vive mejor.</b></h1>
+			<p>Conéctate al futuro con nuestra red 4G y disfruta <br>de una experiencia de internet sin límites.</p>
 		</div>
 		<div class="buttons-hero"> <!--Display,Justify,Align - Gap-->
 			<button>¡Elige tu plan y disfruta!</button>
-			<button>Descubre más</button>
+			<button class="descubre">Descubre más</button>
 		</div>
 		<div class="image-hero">
-			<img src="./JPEGs/Imagen.jpg">
+			<img src="./PNGs/Imagen.png">
 		</div>
 	</section>
 	<section class="plans"> <!--Display, Direction, Justify, Align-->
@@ -51,15 +53,31 @@
 			</div>
 		</div>
 		<div class="cards-plans">
-			<div class="card"></div>
-			<div class="card"></div>
-			<div class="card"></div>
-			<div class="card"></div>
+			<div class="card">
+				<p>Plan <br>Movistar Plus</p>
+				<h1>25GB</h1>
+				<button>¡Actívalo ahora!</button>
+			</div>
+			<div class="card">
+				<p>Plan <br>Movistar Plus</p>
+				<h1>10GB</h1>
+				<button>¡Actívalo ahora!</button>
+			</div>
+			<div class="card">
+				<p>Plan <br>Movistar Plus</p>
+				<h1>6GB</h1>
+				<button>¡Actívalo ahora!</button>
+			</div>
+			<div class="card">
+				<p>Plan <br>Movistar Plus</p>
+				<h1>4GB</h1>
+				<button>¡Actívalo ahora!</button>
+			</div>
 		</div>
 	</section>
 	<section class="app"> <!--Grid, 2 column, Justify, Gap-->
 		<div class="image-app">
-			<img src="./JPEGs/Imagen App.jpg">
+			<img src="./PNGs/Imagen App.png">
 		</div>
 		<div class="info-app">
 			<div class="logo">

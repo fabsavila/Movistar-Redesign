@@ -1,10 +1,226 @@
 /* Variables */
 /* Mixin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
 nav {
   background-color: #402063;
+  border-bottom: 2px solid #6935A2;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #F5F5F5;
-  margin: 16px 53px 16px 53px;
+  font-family: "Poppins";
+  font-weight: 500;
+  color: #FFFFFF;
+  font-size: 14px;
+  padding: 16px 40px 16px 40px;
+}
+nav .logo-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+nav .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+}
+nav .buttons-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+nav .shop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border-color: transparent;
+  border-width: 0;
+  padding: 10px;
+  text-align: center;
+  background-color: #F5F5F5;
+}
+nav .shop img {
+  width: 20px;
+}
+nav .esim {
+  background-color: #5FC323;
+}
+
+button {
+  border-radius: 42px;
+  border-color: transparent;
+  border-width: 0;
+  padding: 10px 15px;
+  text-align: center;
+  background-color: #00A9E0;
+  font-family: "Poppins";
+  font-weight: 600;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 26px;
+  background-color: #402063;
+  gap: 16px;
+}
+.hero h1 {
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 600;
+  color: #FFFFFF;
+  font-size: 45px;
+}
+.hero p {
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 500;
+  color: #FFFFFF;
+  font-size: 15px;
+}
+.hero .buttons-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.hero .buttons-hero .descubre {
+  border: 2px solid white;
+  background-color: transparent;
+}
+.hero img {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.plans {
+  padding: 70px 80px 70px 80px;
+  background-color: #F5F5F5;
+}
+.plans .text-button-plans {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  padding-bottom: 60px;
+}
+.plans .text-button-plans .text-plans h1 {
+  font-family: "Poppins";
+  font-weight: 700;
+  color: #402063;
+  font-size: 36px;
+}
+.plans .text-button-plans .text-plans p {
+  font-family: "Poppins";
+  font-weight: 500;
+  color: #404040;
+}
+.plans .text-button-plans .button-plans {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.plans .text-button-plans button {
+  border: 2px solid #402063;
+  background-color: transparent;
+  color: #402063;
+}
+.plans .cards-plans {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 30px;
+}
+.plans .cards-plans .card {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.plans .cards-plans .card p {
+  font-family: "Poppins";
+  font-weight: 700;
+  color: #402063;
+  line-height: 25px;
+}
+.plans .cards-plans .card h1 {
+  font-family: "Poppins";
+  font-weight: 700;
+  color: #5FC323;
+  font-size: 47px;
+}
+.plans .cards-plans .card button {
+  width: 100%;
+}
+
+@media only screen and (max-width: 720px) {
+  .text-hero h1 {
+    font-size: 36px;
+    word-break: break-word;
+    width: 380px;
+    line-height: 40px;
+    padding-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 835px) {
+  .plans {
+    padding: 20px 30px;
+  }
+  .plans .text-button-plans .text-plans h1 {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 10px;
+  }
+  .plans .cards-plans {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+  }
+  .plans .cards-plans .card {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .plans {
+    padding: 20px 30px;
+  }
+  .plans .text-button-plans .text-plans h1 {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 10px;
+  }
+  .plans .cards-plans {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 20px;
+  }
+  .plans .cards-plans .card {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 1011px) {
+  .menu-responsive {
+    display: flex;
+  }
+  .menu p {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1011px) {
+  .menu-responsive {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */

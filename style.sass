@@ -1,20 +1,139 @@
-/* Variables
-$main-color: #402063
-$white-color: #F5F5F5
-$button-color: #00A9E0
-$green-color: #5FC323
-
-/* Mixin
-@mixin flex($display: flex, $justify: center, $align: center)
-	display: $display
-	justify-content: $justify
-	align-items: $align
+@use "./_utilidades" as *
+	
+*
+	margin: 0
+	padding: 0
 
 nav
 	background-color: $main-color
+	border-bottom: 2px solid #6935A2
 	@include flex(flex, space-between, center)
-	color: $white-color
-	margin: 16px 53px 16px 53px
+	@include text()
+	font-size: 14px
+	padding: 16px 40px 16px 40px
+	.logo-menu
+		@include flex()
+		gap: 25px
+	.menu
+		@include flex()
+		gap: 26px
+	.buttons-nav
+		@include flex()
+		gap: 15px
+	.shop
+		@include flex()
+		@include circle()
+		img
+			width: 20px
+	.esim
+		background-color: $green-color
 
+button
+	@include buttons()
+	@include text("Poppins", 600)
+	font-size: 14px
 
-	
+.hero
+	@include column()
+	padding-top: 26px
+	background-color: $main-color
+	gap: 16px
+	h1
+		text-align: center
+		@include title()
+		font-size: 45px
+	p
+		text-align: center
+		@include text()
+		font-size: 15px
+	.buttons-hero
+		@include flex()
+		gap: 15px
+		.descubre
+			@include t-buttons()
+	img
+		margin-top: 10px
+		width: 100%
+
+.plans
+	padding: 70px 80px 70px 80px
+	background-color: $white-color
+	.text-button-plans
+		@include grid(grid, 70% 30%)
+		padding-bottom: 60px
+		.text-plans
+			h1
+				@include title("Poppins", 700, $main-color)
+				font-size: 36px
+			p
+				@include text("Poppins", 500, #404040)
+		.button-plans
+			@include flex(flex, flex-end, flex-start)
+		button
+			@include t-buttons(2px solid $main-color, transparent)
+			color: $main-color
+
+	.cards-plans
+		@include grid()
+		justify-items: center
+		gap: 30px
+		.card
+			@include column(flex, center, flex-start, column)
+			gap: 8px
+			padding: 18px
+			border-radius: 20px
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25)
+			p
+				@include text("Poppins", 700, $main-color)
+				line-height: 25px
+			h1
+				@include title("Poppins", 700, $green-color)
+				font-size: 47px
+			button
+				width: 100%
+
+@media only screen and (max-width: 720px)
+	.text-hero h1
+		font-size: 36px
+		word-break: break-word
+		width: 380px
+		line-height: 40px
+		padding-bottom: 10px
+
+@media only screen and (max-width: 835px)
+	.plans
+		padding: 20px 30px
+		.text-button-plans
+			.text-plans h1
+				font-size: 32px
+				line-height: 40px
+				margin-bottom: 10px
+		.cards-plans
+			@include grid(grid, 50% 50%)
+			gap: 20px
+			.card
+				width: 80%
+
+@media only screen and (min-width: 900px)
+	.plans
+		padding: 20px 30px
+		.text-button-plans
+			.text-plans h1
+				font-size: 32px
+				line-height: 40px
+				margin-bottom: 10px
+		.cards-plans
+			@include grid(grid, 33% 33% 33%)
+			gap: 20px
+			.card
+				width: 80%
+
+@media only screen and (max-width: 1011px)
+	.menu-responsive
+		display: flex
+	.menu p
+		display: none
+
+@media only screen and (min-width: 1011px)
+	.menu-responsive
+		display: none

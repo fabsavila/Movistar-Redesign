@@ -1,0 +1,51 @@
+/* Variables
+$main-color: #402063
+$white-color: #F5F5F5
+$button-color: #00A9E0
+$green-color: #5FC323
+
+/* Mixin
+@mixin flex($display: flex, $justify: center, $align: center)
+	display: $display
+	justify-content: $justify
+	align-items: $align
+
+@mixin column($display: flex, $justify: center, $align: center, $direction: column)
+	display: $display
+	justify-content: $justify
+	align-items: $align
+	flex-direction: $direction
+
+@mixin grid($display: grid, $grid: repeat(4, 1fr))
+	display: $display
+	grid-template-columns: $grid
+
+@mixin text($font: "Poppins", $weight: 500, $color: #FFFFFF)
+	font-family: $font
+	font-weight: $weight
+	color: $color
+
+@mixin title($font: "Poppins", $weight: 600, $color: #FFFFFF)
+	font-family: $font
+	font-weight: $weight
+	color: $color
+
+@mixin circle($radius: 100%, $bordercolor: transparent, $borderwidth: 0, $padding: 10px, $textalign: center, $bcolor: #F5F5F5)
+	border-radius: $radius
+	border-color: $bordercolor
+	border-width: $borderwidth
+	padding: $padding
+	text-align: $textalign
+	background-color: $bcolor
+
+@mixin buttons($radius: 42px, $bordercolor: transparent, $borderwidth: 0, $padding: 10px 15px, $textalign: center, $bcolor: #00A9E0)
+	border-radius: $radius
+	border-color: $bordercolor
+	border-width: $borderwidth
+	padding: $padding
+	text-align: $textalign
+	background-color: $bcolor
+
+@mixin t-buttons($border: 2px solid #FFFF, $b-color: transparent)
+	border: $border
+	background-color: $b-color
