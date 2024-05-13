@@ -10,7 +10,7 @@ nav
 	@include flex(flex, space-between, center)
 	@include text()
 	font-size: 14px
-	padding: 16px 40px 16px 40px
+	padding: 16px 40px
 	.logo-menu
 		@include flex()
 		gap: 25px
@@ -56,7 +56,7 @@ button
 		width: 100%
 
 .plans
-	padding: 70px 80px 70px 80px
+	padding: 60px 40px
 	background-color: $white-color
 	.text-button-plans
 		@include grid(grid, 70% 30%)
@@ -79,6 +79,7 @@ button
 		gap: 30px
 		.card
 			@include column(flex, center, flex-start, column)
+			width: 85%
 			gap: 8px
 			padding: 18px
 			border-radius: 20px
@@ -99,10 +100,14 @@ button
 		width: 380px
 		line-height: 40px
 		padding-bottom: 10px
-
-@media only screen and (max-width: 835px)
+	
+@media only screen and (max-width: 1011px)
+	.menu-responsive
+		display: flex
+	.menu p
+		display: none
 	.plans
-		padding: 20px 30px
+		padding: 30px 40px
 		.text-button-plans
 			.text-plans h1
 				font-size: 32px
@@ -113,26 +118,6 @@ button
 			gap: 20px
 			.card
 				width: 80%
-
-@media only screen and (min-width: 900px)
-	.plans
-		padding: 20px 30px
-		.text-button-plans
-			.text-plans h1
-				font-size: 32px
-				line-height: 40px
-				margin-bottom: 10px
-		.cards-plans
-			@include grid(grid, 33% 33% 33%)
-			gap: 20px
-			.card
-				width: 80%
-
-@media only screen and (max-width: 1011px)
-	.menu-responsive
-		display: flex
-	.menu p
-		display: none
 
 @media only screen and (min-width: 1011px)
 	.menu-responsive
