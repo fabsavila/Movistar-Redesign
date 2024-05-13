@@ -93,6 +93,72 @@ button
 			button
 				width: 100%
 
+.app
+	@include grid(grid, 55% 45%)
+	padding: 0 70px
+	background-color: $main-color
+	.image-app img
+		width: 100%
+	.image-app-responsive img
+		display: none
+	.info-app
+		@include column(flex, center, flex-end)
+		gap: 20px
+		.text-app
+			h1
+				@include title("Poppins", 700)
+				text-align: end
+				font-size: 46px
+				line-height: 50px
+			p
+				@include text()
+				margin-top: 15px
+				text-align: end
+		.download-buttons
+			@include flex()
+			gap: 10px
+
+.solutions
+	@include column()
+	gap: 25px
+	background-color: $white-color
+	padding: 40px 0px
+	.text-solutions
+		h1
+			@include title("Poppins", 700, $main-color)
+			font-size: 36px
+		p
+			@include text("Poppins", 500, #404040)
+			text-align: center
+	.buttons-solutions
+		@include flex()
+		gap: 25px
+		margin-top: 10px
+		button
+			text-align: center
+			@include flex()
+			gap: 5px
+
+footer
+	@include flex(flex, space-between, center)
+	background-color: $main-color
+	padding: 30px 40px
+	text-align: center
+	.copyright p
+		@include text("Poppins", 400)
+		font-size: 14px
+		text-align: center
+	.social-media
+		@include flex()
+		gap: 10px
+		button
+			@include flex()
+			@include circle()
+			img
+				width: 20px
+
+/* Responsive
+
 @media only screen and (max-width: 720px)
 	.text-hero h1
 		font-size: 36px
@@ -100,7 +166,34 @@ button
 		width: 380px
 		line-height: 40px
 		padding-bottom: 10px
-	
+
+	.solutions
+		padding: 40px 20px
+
+	footer
+		@include column()
+		gap: 20px
+		.copyright p
+			text-align: center
+			margin: 0
+
+@media only screen and (max-width: 962px)
+	.app
+		@include grid(grid, 100%)
+		gap: 15px
+		padding: 35px 20px 0 20px
+		justify-items: center
+		.image-app img
+			display: none
+		.image-app-responsive img
+			display: flex
+			width: 100%
+		.info-app
+			@include column(flex, center, center)
+			.text-app
+				h1, p
+					text-align: center
+
 @media only screen and (max-width: 1011px)
 	.menu-responsive
 		display: flex
@@ -119,6 +212,8 @@ button
 			.card
 				width: 80%
 
-@media only screen and (min-width: 1011px)
-	.menu-responsive
-		display: none
+@media only screen and (min-width: 1012px)
+	nav
+		.logo-menu
+			.menu-responsive
+				display: none

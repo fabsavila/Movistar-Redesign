@@ -167,6 +167,120 @@ button {
   width: 100%;
 }
 
+.app {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  padding: 0 70px;
+  background-color: #402063;
+}
+.app .image-app img {
+  width: 100%;
+}
+.app .image-app-responsive img {
+  display: none;
+}
+.app .info-app {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 20px;
+}
+.app .info-app .text-app h1 {
+  font-family: "Poppins";
+  font-weight: 700;
+  color: #FFFFFF;
+  text-align: end;
+  font-size: 46px;
+  line-height: 50px;
+}
+.app .info-app .text-app p {
+  font-family: "Poppins";
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-top: 15px;
+  text-align: end;
+}
+.app .info-app .download-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.solutions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  background-color: #F5F5F5;
+  padding: 40px 0px;
+}
+.solutions .text-solutions h1 {
+  font-family: "Poppins";
+  font-weight: 700;
+  color: #402063;
+  font-size: 36px;
+}
+.solutions .text-solutions p {
+  font-family: "Poppins";
+  font-weight: 500;
+  color: #404040;
+  text-align: center;
+}
+.solutions .buttons-solutions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 10px;
+}
+.solutions .buttons-solutions button {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #402063;
+  padding: 30px 40px;
+  text-align: center;
+}
+footer .copyright p {
+  font-family: "Poppins";
+  font-weight: 400;
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: center;
+}
+footer .social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+footer .social-media button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border-color: transparent;
+  border-width: 0;
+  padding: 10px;
+  text-align: center;
+  background-color: #F5F5F5;
+}
+footer .social-media button img {
+  width: 20px;
+}
+
+/* Responsive */
 @media only screen and (max-width: 720px) {
   .text-hero h1 {
     font-size: 36px;
@@ -174,6 +288,45 @@ button {
     width: 380px;
     line-height: 40px;
     padding-bottom: 10px;
+  }
+  .solutions {
+    padding: 40px 20px;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  footer .copyright p {
+    text-align: center;
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 962px) {
+  .app {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 15px;
+    padding: 35px 20px 0 20px;
+    justify-items: center;
+  }
+  .app .image-app img {
+    display: none;
+  }
+  .app .image-app-responsive img {
+    display: flex;
+    width: 100%;
+  }
+  .app .info-app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .app .info-app .text-app h1, .app .info-app .text-app p {
+    text-align: center;
   }
 }
 @media only screen and (max-width: 1011px) {
@@ -200,8 +353,8 @@ button {
     width: 80%;
   }
 }
-@media only screen and (min-width: 1011px) {
-  .menu-responsive {
+@media only screen and (min-width: 1012px) {
+  nav .logo-menu .menu-responsive {
     display: none;
   }
 }/*# sourceMappingURL=style.css.map */
