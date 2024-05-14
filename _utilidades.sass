@@ -4,28 +4,18 @@ $white-color: #F5F5F5
 $button-color: #00A9E0
 $green-color: #5FC323
 
-/* Mixin
+/* Mixin - Condicionables
 @mixin flex($display: flex, $justify: center, $align: center)
-	display: $display
-	justify-content: $justify
-	align-items: $align
+	@if $display == flex
+		display: $display
+		justify-content: $justify
+		align-items: $align
+	@else if $display == grid
+		display: $display
+		justify-items: $justify
+		align-content: $align
 
-@mixin column($display: flex, $justify: center, $align: center, $direction: column)
-	display: $display
-	justify-content: $justify
-	align-items: $align
-	flex-direction: $direction
-
-@mixin grid($display: grid, $grid: repeat(4, 1fr))
-	display: $display
-	grid-template-columns: $grid
-
-@mixin text($font: "Poppins", $weight: 500, $color: #FFFFFF)
-	font-family: $font
-	font-weight: $weight
-	color: $color
-
-@mixin title($font: "Poppins", $weight: 600, $color: #FFFFFF)
+@mixin text($font: "Poppins", $weight: 500, $color: white)
 	font-family: $font
 	font-weight: $weight
 	color: $color

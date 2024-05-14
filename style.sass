@@ -11,12 +11,16 @@ nav
 	@include text()
 	font-size: 14px
 	padding: 16px 40px
-	.logo-menu
+	position: sticky
+	top: 0
+	.logo-menu, .menu
 		@include flex()
 		gap: 25px
-	.menu
-		@include flex()
-		gap: 26px
+	.menu a
+		@include text()
+		text-decoration: none
+	.menu a:hover
+		@include text("Poppins", 500, #cecece)
 	.buttons-nav
 		@include flex()
 		gap: 15px
@@ -25,22 +29,30 @@ nav
 		@include circle()
 		img
 			width: 20px
+	.shop:hover
+		@include circle(100%,transparent,0,10px,center,#cecece)
 	.esim
 		background-color: $green-color
+	.esim:hover
+		background-color: #4fa31f
 
 button
 	@include buttons()
 	@include text("Poppins", 600)
 	font-size: 14px
+	cursor: pointer
+button:hover
+	background-color: #058ab6
 
 .hero
-	@include column()
+	@include flex()
+	flex-direction: column
 	padding-top: 26px
 	background-color: $main-color
 	gap: 16px
 	h1
 		text-align: center
-		@include title()
+		@include text("Poppins", 600)
 		font-size: 45px
 	p
 		text-align: center
@@ -51,6 +63,8 @@ button
 		gap: 15px
 		.descubre
 			@include t-buttons()
+		.descubre:hover
+			@include t-buttons(2px solid #FFFF, #402063)
 	img
 		margin-top: 10px
 		width: 100%
@@ -59,11 +73,12 @@ button
 	padding: 60px 40px
 	background-color: $white-color
 	.text-button-plans
-		@include grid(grid, 70% 30%)
+		@include flex(grid, stretch, center)
+		grid-template-columns: 70% 30%
 		padding-bottom: 60px
 		.text-plans
 			h1
-				@include title("Poppins", 700, $main-color)
+				@include text("Poppins", 700, $main-color)
 				font-size: 36px
 			p
 				@include text("Poppins", 500, #404040)
@@ -72,13 +87,17 @@ button
 		button
 			@include t-buttons(2px solid $main-color, transparent)
 			color: $main-color
+		button:hover
+			@include t-buttons(2px solid $main-color, $main-color)
+			color: white
 
 	.cards-plans
-		@include grid()
-		justify-items: center
+		@include flex(grid)
+		grid-template-columns: repeat(4, 1fr)
 		gap: 30px
 		.card
-			@include column(flex, center, flex-start, column)
+			@include flex(flex, center, flex-start)
+			flex-direction: column
 			width: 85%
 			gap: 8px
 			padding: 18px
@@ -88,13 +107,14 @@ button
 				@include text("Poppins", 700, $main-color)
 				line-height: 25px
 			h1
-				@include title("Poppins", 700, $green-color)
+				@include text("Poppins", 700, $green-color)
 				font-size: 47px
 			button
 				width: 100%
 
 .app
-	@include grid(grid, 55% 45%)
+	@include flex(grid, stretch, center)
+	grid-template-columns: 55% 45%
 	padding: 0 70px
 	background-color: $main-color
 	.image-app img
@@ -102,11 +122,12 @@ button
 	.image-app-responsive img
 		display: none
 	.info-app
-		@include column(flex, center, flex-end)
+		@include flex(flex, center, flex-end)
+		flex-direction: column
 		gap: 20px
 		.text-app
 			h1
-				@include title("Poppins", 700)
+				@include text("Poppins", 700)
 				text-align: end
 				font-size: 46px
 				line-height: 50px
@@ -119,13 +140,14 @@ button
 			gap: 10px
 
 .solutions
-	@include column()
+	@include flex()
+	flex-direction: column
 	gap: 25px
 	background-color: $white-color
 	padding: 40px 0px
 	.text-solutions
 		h1
-			@include title("Poppins", 700, $main-color)
+			@include text("Poppins", 700, $main-color)
 			font-size: 36px
 		p
 			@include text("Poppins", 500, #404040)
@@ -134,6 +156,8 @@ button
 		@include flex()
 		gap: 25px
 		margin-top: 10px
+		a
+			text-decoration: none
 		button
 			text-align: center
 			@include flex()
@@ -156,6 +180,8 @@ footer
 			@include circle()
 			img
 				width: 20px
+		button:hover
+			background-color: #cecece
 
 /* Responsive
 
@@ -171,7 +197,8 @@ footer
 		padding: 40px 20px
 
 	footer
-		@include column()
+		@include flex()
+		flex-direction: column
 		gap: 20px
 		.copyright p
 			text-align: center
@@ -179,7 +206,8 @@ footer
 
 @media only screen and (max-width: 962px)
 	.app
-		@include grid(grid, 100%)
+		@include flex(grid)
+		grid-template-columns: 100%
 		gap: 15px
 		padding: 35px 20px 0 20px
 		justify-items: center
@@ -189,7 +217,8 @@ footer
 			display: flex
 			width: 100%
 		.info-app
-			@include column(flex, center, center)
+			@include flex(flex, center, center)
+			flex-direction: column
 			.text-app
 				h1, p
 					text-align: center
@@ -197,7 +226,7 @@ footer
 @media only screen and (max-width: 1011px)
 	.menu-responsive
 		display: flex
-	.menu p
+	.menu a
 		display: none
 	.plans
 		padding: 30px 40px
@@ -207,7 +236,8 @@ footer
 				line-height: 40px
 				margin-bottom: 10px
 		.cards-plans
-			@include grid(grid, 50% 50%)
+			@include flex(grid)
+			grid-template-columns: 50% 50%
 			gap: 20px
 			.card
 				width: 80%

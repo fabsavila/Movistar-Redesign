@@ -1,5 +1,5 @@
 /* Variables */
-/* Mixin */
+/* Mixin - Condicionables */
 * {
   margin: 0;
   padding: 0;
@@ -13,21 +13,28 @@ nav {
   align-items: center;
   font-family: "Poppins";
   font-weight: 500;
-  color: #FFFFFF;
+  color: white;
   font-size: 14px;
   padding: 16px 40px;
+  position: sticky;
+  top: 0;
 }
-nav .logo-menu {
+nav .logo-menu, nav .menu {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 25px;
 }
-nav .menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 26px;
+nav .menu a {
+  font-family: "Poppins";
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+}
+nav .menu a:hover {
+  font-family: "Poppins";
+  font-weight: 500;
+  color: #cecece;
 }
 nav .buttons-nav {
   display: flex;
@@ -49,8 +56,19 @@ nav .shop {
 nav .shop img {
   width: 20px;
 }
+nav .shop:hover {
+  border-radius: 100%;
+  border-color: transparent;
+  border-width: 0;
+  padding: 10px;
+  text-align: center;
+  background-color: #cecece;
+}
 nav .esim {
   background-color: #5FC323;
+}
+nav .esim:hover {
+  background-color: #4fa31f;
 }
 
 button {
@@ -62,8 +80,13 @@ button {
   background-color: #00A9E0;
   font-family: "Poppins";
   font-weight: 600;
-  color: #FFFFFF;
+  color: white;
   font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #058ab6;
 }
 
 .hero {
@@ -79,14 +102,14 @@ button {
   text-align: center;
   font-family: "Poppins";
   font-weight: 600;
-  color: #FFFFFF;
+  color: white;
   font-size: 45px;
 }
 .hero p {
   text-align: center;
   font-family: "Poppins";
   font-weight: 500;
-  color: #FFFFFF;
+  color: white;
   font-size: 15px;
 }
 .hero .buttons-hero {
@@ -99,6 +122,10 @@ button {
   border: 2px solid white;
   background-color: transparent;
 }
+.hero .buttons-hero .descubre:hover {
+  border: 2px solid white;
+  background-color: #402063;
+}
 .hero img {
   margin-top: 10px;
   width: 100%;
@@ -110,6 +137,8 @@ button {
 }
 .plans .text-button-plans {
   display: grid;
+  justify-items: stretch;
+  align-content: center;
   grid-template-columns: 70% 30%;
   padding-bottom: 60px;
 }
@@ -134,10 +163,16 @@ button {
   background-color: transparent;
   color: #402063;
 }
+.plans .text-button-plans button:hover {
+  border: 2px solid #402063;
+  background-color: #402063;
+  color: white;
+}
 .plans .cards-plans {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   justify-items: center;
+  align-content: center;
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 .plans .cards-plans .card {
@@ -169,6 +204,8 @@ button {
 
 .app {
   display: grid;
+  justify-items: stretch;
+  align-content: center;
   grid-template-columns: 55% 45%;
   padding: 0 70px;
   background-color: #402063;
@@ -189,7 +226,7 @@ button {
 .app .info-app .text-app h1 {
   font-family: "Poppins";
   font-weight: 700;
-  color: #FFFFFF;
+  color: white;
   text-align: end;
   font-size: 46px;
   line-height: 50px;
@@ -197,7 +234,7 @@ button {
 .app .info-app .text-app p {
   font-family: "Poppins";
   font-weight: 500;
-  color: #FFFFFF;
+  color: white;
   margin-top: 15px;
   text-align: end;
 }
@@ -236,6 +273,9 @@ button {
   gap: 25px;
   margin-top: 10px;
 }
+.solutions .buttons-solutions a {
+  text-decoration: none;
+}
 .solutions .buttons-solutions button {
   text-align: center;
   display: flex;
@@ -255,7 +295,7 @@ footer {
 footer .copyright p {
   font-family: "Poppins";
   font-weight: 400;
-  color: #FFFFFF;
+  color: white;
   font-size: 14px;
   text-align: center;
 }
@@ -278,6 +318,9 @@ footer .social-media button {
 }
 footer .social-media button img {
   width: 20px;
+}
+footer .social-media button:hover {
+  background-color: #cecece;
 }
 
 /* Responsive */
@@ -307,6 +350,8 @@ footer .social-media button img {
 @media only screen and (max-width: 962px) {
   .app {
     display: grid;
+    justify-items: center;
+    align-content: center;
     grid-template-columns: 100%;
     gap: 15px;
     padding: 35px 20px 0 20px;
@@ -333,7 +378,7 @@ footer .social-media button img {
   .menu-responsive {
     display: flex;
   }
-  .menu p {
+  .menu a {
     display: none;
   }
   .plans {
@@ -346,6 +391,8 @@ footer .social-media button img {
   }
   .plans .cards-plans {
     display: grid;
+    justify-items: center;
+    align-content: center;
     grid-template-columns: 50% 50%;
     gap: 20px;
   }
