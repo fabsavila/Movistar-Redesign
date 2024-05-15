@@ -30,6 +30,7 @@ nav .menu a {
   font-weight: 500;
   color: white;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 nav .menu a:hover {
   font-family: "Poppins";
@@ -52,6 +53,7 @@ nav .shop {
   padding: 10px;
   text-align: center;
   background-color: #F5F5F5;
+  transition: background-color 0.3s ease;
 }
 nav .shop img {
   width: 20px;
@@ -66,6 +68,7 @@ nav .shop:hover {
 }
 nav .esim {
   background-color: #5FC323;
+  transition: background-color 0.3s ease;
 }
 nav .esim:hover {
   background-color: #4fa31f;
@@ -83,6 +86,7 @@ button {
   color: white;
   font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -121,11 +125,15 @@ button:hover {
 .hero .buttons-hero .descubre {
   border: 2px solid white;
   background-color: transparent;
+  transition: background-color 0.3s ease;
 }
 .hero .buttons-hero .descubre:hover {
   background-color: #351b52;
 }
 .hero img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 10px;
   width: 100%;
 }
@@ -161,6 +169,7 @@ button:hover {
   border: 2px solid #402063;
   background-color: transparent;
   color: #402063;
+  transition: all 0.5s ease;
 }
 .plans .text-button-plans button:hover {
   border: 2px solid #402063;
@@ -210,10 +219,8 @@ button:hover {
   background-color: #402063;
 }
 .app .image-app img {
+  display: flex;
   width: 100%;
-}
-.app .image-app-responsive img {
-  display: none;
 }
 .app .info-app {
   display: flex;
@@ -314,6 +321,7 @@ footer .social-media button {
   padding: 10px;
   text-align: center;
   background-color: #F5F5F5;
+  transition: background-color 0.3s ease;
 }
 footer .social-media button img {
   width: 20px;
@@ -331,9 +339,6 @@ footer .social-media button:hover {
     line-height: 40px;
     padding-bottom: 10px;
   }
-  .solutions {
-    padding: 40px 20px;
-  }
   footer {
     display: flex;
     justify-content: center;
@@ -348,33 +353,61 @@ footer .social-media button:hover {
 }
 @media only screen and (max-width: 962px) {
   .app {
-    display: grid;
-    justify-items: center;
-    align-content: center;
-    grid-template-columns: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     gap: 15px;
     padding: 35px 20px 0 20px;
-    justify-items: center;
   }
-  .app .image-app img {
-    display: none;
-  }
-  .app .image-app-responsive img {
+  .app .image-app {
     display: flex;
-    width: 100%;
+    order: 2;
   }
   .app .info-app {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    order: 1;
   }
   .app .info-app .text-app h1, .app .info-app .text-app p {
     text-align: center;
   }
+  nav {
+    padding: 10px 20px;
+  }
+  .buttons-mav .menu-responsive {
+    display: flex;
+  }
+  .plans .text-button-plans {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 40px;
+  }
+  .solutions {
+    padding: 40px 20px;
+  }
+  .solutions .text-solutions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .solutions .text-solutions h1 {
+    text-align: center;
+    line-height: 40px;
+  }
+  .solutions .buttons-solutions button {
+    flex-wrap: wrap;
+  }
 }
 @media only screen and (max-width: 1011px) {
-  .menu-responsive {
+  .buttons-nav .menu-responsive {
     display: flex;
   }
   .menu a {
@@ -400,7 +433,7 @@ footer .social-media button:hover {
   }
 }
 @media only screen and (min-width: 1012px) {
-  nav .logo-menu .menu-responsive {
+  nav .buttons-nav .menu-responsive {
     display: none;
   }
 }/*# sourceMappingURL=style.css.map */

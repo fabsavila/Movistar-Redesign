@@ -19,6 +19,7 @@ nav
 	.menu a
 		@include text()
 		text-decoration: none
+		transition: color 0.3s ease
 	.menu a:hover
 		@include text("Poppins", 500, #cecece)
 	.buttons-nav
@@ -29,10 +30,12 @@ nav
 		@include circle()
 		img
 			width: 20px
+		transition: background-color 0.3s ease
 	.shop:hover
 		@include circle(100%,transparent,0,10px,center,#cecece)
 	.esim
 		background-color: $green-color
+		transition: background-color 0.3s ease
 	.esim:hover
 		background-color: #4fa31f
 
@@ -41,6 +44,7 @@ button
 	@include text("Poppins", 600)
 	font-size: 14px
 	cursor: pointer
+	transition: background-color 0.3s ease
 button:hover
 	background-color: #058ab6
 
@@ -63,9 +67,11 @@ button:hover
 		gap: 15px
 		.descubre
 			@include t-buttons()
+			transition: background-color 0.3s ease
 		.descubre:hover
 			background-color: #351b52
 	img
+		@include flex()
 		margin-top: 10px
 		width: 100%
 
@@ -87,6 +93,7 @@ button:hover
 		button
 			@include t-buttons(2px solid $main-color, transparent)
 			color: $main-color
+			transition: all 0.5s ease
 		button:hover
 			@include t-buttons(2px solid $main-color, $main-color)
 			color: white
@@ -118,9 +125,8 @@ button:hover
 	padding: 0 70px
 	background-color: $main-color
 	.image-app img
+		display: flex
 		width: 100%
-	.image-app-responsive img
-		display: none
 	.info-app
 		@include flex(flex, center, flex-end)
 		flex-direction: column
@@ -178,6 +184,7 @@ footer
 		button
 			@include flex()
 			@include circle()
+			transition: background-color 0.3s ease
 			img
 				width: 20px
 		button:hover
@@ -193,9 +200,6 @@ footer
 		line-height: 40px
 		padding-bottom: 10px
 
-	.solutions
-		padding: 40px 20px
-
 	footer
 		@include flex()
 		flex-direction: column
@@ -203,29 +207,54 @@ footer
 		.copyright p
 			text-align: center
 			margin: 0
+		
 
 @media only screen and (max-width: 962px)
 	.app
-		@include flex(grid)
-		grid-template-columns: 100%
+		@include flex()
+		flex-direction: column
 		gap: 15px
 		padding: 35px 20px 0 20px
-		justify-items: center
-		.image-app img
-			display: none
-		.image-app-responsive img
+		.image-app
 			display: flex
-			width: 100%
+			order: 2
 		.info-app
 			@include flex(flex, center, center)
 			flex-direction: column
+			order: 1
 			.text-app
 				h1, p
 					text-align: center
+	nav
+		padding: 10px 20px
+
+	.buttons-mav
+		.menu-responsive
+			display: flex
+	.plans
+		.text-button-plans
+			@include flex(flex, flex-end, flex-start)
+			flex-direction: column
+			gap: 20px
+			padding-bottom: 40px
+
+	.solutions
+		padding: 40px 20px
+		.text-solutions
+			@include flex()
+			flex-direction: column
+			gap: 20px
+			h1
+				text-align: center
+				line-height: 40px
+		.buttons-solutions button
+			flex-wrap: wrap
+
 
 @media only screen and (max-width: 1011px)
-	.menu-responsive
-		display: flex
+	.buttons-nav
+		.menu-responsive
+			display: flex
 	.menu a
 		display: none
 	.plans
@@ -244,6 +273,6 @@ footer
 
 @media only screen and (min-width: 1012px)
 	nav
-		.logo-menu
+		.buttons-nav
 			.menu-responsive
 				display: none
